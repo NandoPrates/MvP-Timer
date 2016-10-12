@@ -1,0 +1,24 @@
+<h1>List#index</h1>
+
+<table class="bordered">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Servidor</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @lists.each do |l| %>
+			<tr>
+				<td><%= l.name %></td>
+				<td><%= l.server.name %></td>
+				<td>
+					<%= form_for :list, url: { action: 'destroy', id: l.id } do |f| %>
+						<%= f.submit 'Delete', class: 'waves-effect waves-light btn' %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

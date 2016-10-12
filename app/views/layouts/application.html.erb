@@ -6,9 +6,77 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-    <%= yield %>
+  	<div class="container">
+	  	<div class="main-container">
+	  		<div class="application full-height z-depth-1">
+		  		<div class="row full-height" style="margin: 0; ">
+			  		<div class="col l3 hide-on-med-and-down full-height">
+			  			<div class="left-nav full-height">
+
+				  			<ul id="menu-dropdown" class="dropdown-content">
+							  <li><a href="#!">New List</a></li>
+							  <li><a href="#!">Settings</a></li>
+							  <li class="divider"></li>
+							  <li><a href="#!">Log Out</a></li>
+							</ul>
+
+			  				  <nav class="lists-nav">
+							    <div class="nav-wrapper">
+							      	<img 
+							      		class="circle responsive-img" 
+							      		style="vertical-align:middle; padding-right:5px; margin-left:5px;" 
+							      		src="http://materializecss.com/images/yuna.jpg" 
+							      		width="48">
+							      	<b>Walter</b>
+
+									<ul class="right hide-on-med-and-down">
+										<li><a class="dropdown-button" href="#" data-alignment="right" data-activates="menu-dropdown"><i class="material-icons">more_vert</i></a></li>
+									</ul>
+							    </div>
+							  </nav>
+
+							  <div class="lists-container">
+
+							  </div>
+			  			</div>
+			  		</div>
+
+			  		<div class="col m12 l9 full-height">
+
+						<nav class="content-nav">
+							<div class="nav-wrapper">
+								<a href="#" data-activates="mobile-demo" class="button-collapse show-on-medium hide-on-med-and-up">
+									<i class="material-icons">menu</i>
+								</a>
+							</div>
+						</nav>
+
+			  			<div class="content-container">
+							
+			        		<%= yield %>
+			        	</div>
+			  		</div>
+			  	</div>
+			</div>
+	    </div>
+	</div>
+    
   </body>
 </html>
+
+<script type="text/javascript">
+	$(function(){
+    	$(".button-collapse").sideNav();
+
+    	// Adjust height
+    	var containerHeight = $(".content-container").parent().height();
+    	$(".content-container").height((containerHeight - 84)+"px");
+    	$(".lists-container").height((containerHeight - 84)+"px");	
+      
+	});
+</script>

@@ -1,0 +1,4 @@
+<label>Nome</label>
+<%= f.text_field :name %>
+<%= f.select(:server_id, @servers.collect {|s| [ s.name, s.id ] }, { }, { :style => 'display: block !important;' }) %>
+

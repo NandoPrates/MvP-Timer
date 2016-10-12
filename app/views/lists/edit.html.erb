@@ -1,0 +1,5 @@
+<h1>List#edit</h1>
+<%= form_for :list, url: { action: 'update', id: @list.id } do |f| %>
+	<%= render partial: 'form', locals: { f: f, servers: @servers } %>
+	<%= f.submit 'Edit' %>
+<% end %>
